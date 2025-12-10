@@ -45,7 +45,7 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#0B84A5',
+                        primary: '#111826',
                         secondary: '#F59E0B',
                         dark: '#111827',
                         light: '#F8FAFC'
@@ -2516,83 +2516,641 @@
     document.head.appendChild(style);
 </script>
 
-    <!-- FAQ Section -->
-    <section id="faq" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16 fade-in">
-                <h2 class="text-4xl md:text-5xl font-bold text-dark mb-4">الأسئلة الشائعة</h2>
-                <p class="text-xl text-gray-600 max-w-2xl mx-auto">إجابات على أكثر الأسئلة شيوعاً</p>
+<!-- FAQ Section - Premium Design -->
+<section id="faq" class="py-24 bg-gradient-to-b from-white to-gray-50/50 relative overflow-hidden">
+    <!-- Background Elements -->
+    <div class="absolute inset-0 overflow-hidden">
+        <!-- Floating Icons -->
+        <div class="absolute top-20 left-10 text-primary/10 text-8xl">
+            <i class="fas fa-question-circle"></i>
+        </div>
+        <div class="absolute bottom-20 right-10 text-secondary/10 text-8xl">
+            <i class="fas fa-lightbulb"></i>
+        </div>
+        
+        <!-- Gradient Orbs -->
+        <div class="absolute top-1/3 -left-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-1/3 -right-20 w-96 h-96 bg-secondary/5 rounded-full blur-3xl"></div>
+        
+        <!-- Geometric Pattern -->
+        <div class="absolute inset-0 opacity-[0.02]">
+            <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" xmlns="http://www.w3.org/2000/svg"%3E%3Ccircle cx="30" cy="30" r="2" fill="%23000"/%3E%3C/svg%3E');"></div>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10">
+        <!-- Section Header -->
+        <div class="text-center mb-20">
+            <div class="inline-flex items-center space-x-2 space-x-reverse bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-semibold mb-6">
+                <i class="fas fa-circle-question animate-pulse"></i>
+                <span>دليلك الشامل</span>
             </div>
+            <h2 class="text-4xl md:text-5xl font-bold text-dark mb-6">
+                <span class="text-primary">أسئلة</span> تهمك - 
+                <span class="text-secondary">إجابات</span> شافية
+            </h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                جمعنا لك أكثر الأسئلة شيوعاً التي يطرحها عملاؤنا، مع إجابات شاملة تساعدك في اتخاذ القرار الصحيح
+            </p>
+        </div>
 
-            <div class="max-w-4xl mx-auto space-y-4">
-                <!-- FAQ 1 -->
-                <div class="faq-item bg-light rounded-xl overflow-hidden shadow-md fade-in">
-                    <button class="faq-question w-full text-right p-6 flex justify-between items-center hover:bg-gray-100 transition-colors" onclick="toggleFaq(this)">
-                        <span class="text-xl font-bold text-dark">هل تستخدمون مواد تنظيف آمنة؟</span>
-                        <i class="fas fa-chevron-down text-primary transition-transform duration-300"></i>
+        <!-- FAQ Navigation -->
+        <div class="flex flex-wrap justify-center gap-3 mb-12 max-w-3xl mx-auto" id="faq-categories">
+            <button class="faq-category  px-5 py-3 rounded-xl font-semibold transition-all duration-300  bg-white text-dark border border-gray-200 hover:border-primary shadow-lg hover:shadow-xl hover:scale-105" data-category="all">
+                <i class="fas fa-layer-group ml-2"></i>
+                جميع الأسئلة
+            </button>
+            <button class="faq-category px-5 py-3 rounded-xl font-semibold transition-all duration-300 bg-white text-dark border border-gray-200 hover:border-primary hover:bg-primary/5 hover:shadow-lg" data-category="general">
+                <i class="fas fa-info-circle ml-2"></i>
+                عامة
+            </button>
+            <button class="faq-category px-5 py-3 rounded-xl font-semibold transition-all duration-300 bg-white text-dark border border-gray-200 hover:border-secondary hover:bg-secondary/5 hover:shadow-lg" data-category="pricing">
+                <i class="fas fa-tag ml-2"></i>
+                الأسعار والدفع
+            </button>
+            <button class="faq-category px-5 py-3 rounded-xl font-semibold transition-all duration-300 bg-white text-dark border border-gray-200 hover:border-green-500 hover:bg-green-500/5 hover:shadow-lg" data-category="service">
+                <i class="fas fa-broom ml-2"></i>
+                الخدمات
+            </button>
+            <button class="faq-category px-5 py-3 rounded-xl font-semibold transition-all duration-300 bg-white text-dark border border-gray-200 hover:border-orange-500 hover:bg-orange-500/5 hover:shadow-lg" data-category="guarantee">
+                <i class="fas fa-shield-alt ml-2"></i>
+                الضمانات
+            </button>
+        </div>
+
+        <!-- FAQ Grid -->
+        <div class="max-w-5xl mx-auto mb-16">
+            <div class="space-y-6" id="faq-container">
+                <!-- FAQ 1 - Safety -->
+                <div class="faq-card group" data-category="general">
+                    <button class="faq-header w-full text-right p-8 flex justify-between items-center bg-white rounded-2xl shadow-lg hover:shadow-xl border border-gray-200 hover:border-primary transition-all duration-500 group-hover:-translate-y-1">
+                        <div class="flex items-center flex-1">
+                            <div class="bg-primary/10 p-4 rounded-xl ml-6 group-hover:scale-110 transition-transform">
+                                <i class="fas fa-shield-alt text-2xl text-primary"></i>
+                            </div>
+                            <div class="text-right">
+                                <h3 class="text-2xl font-bold text-dark mb-2">هل تستخدمون مواد تنظيف آمنة وصديقة للبيئة؟</h3>
+                                <div class="flex items-center space-x-2 space-x-reverse text-sm text-gray-500">
+                                    <span class="bg-primary/10 text-primary px-3 py-1 rounded-full">عام</span>
+                                    <span>معدل البحث: 95%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faq-icon w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                            <i class="fas fa-plus text-xl text-primary group-hover:text-white"></i>
+                        </div>
                     </button>
-                    <div class="faq-answer hidden px-6 pb-6">
-                        <p class="text-gray-600 text-lg leading-relaxed">نعم، نستخدم مواد تنظيف آمنة ومعتمدة وصديقة للبيئة. جميع المواد خالية من المواد الكيميائية الضارة وآمنة على الأطفال والحيوانات الأليفة.</p>
+                    <div class="faq-content hidden mt-4 bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-gray-100">
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div>
+                                <p class="text-gray-700 text-lg leading-relaxed mb-6">
+                                    نعم بالتأكيد! نستخدم فقط مواد تنظيف معتمدة من الجهات الصحية العالمية، خالية تماماً من المواد الكيميائية الضارة. جميع منتجاتنا:
+                                </p>
+                                <ul class="space-y-4">
+                                    <li class="flex items-center">
+                                        <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center ml-3">
+                                            <i class="fas fa-check text-green-500"></i>
+                                        </div>
+                                        <span class="text-gray-700">آمنة على الأطفال والحيوانات الأليفة</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center ml-3">
+                                            <i class="fas fa-check text-green-500"></i>
+                                        </div>
+                                        <span class="text-gray-700">صديقة للبيئة وقابلة للتحلل</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center ml-3">
+                                            <i class="fas fa-check text-green-500"></i>
+                                        </div>
+                                        <span class="text-gray-700">معتمدة من وزارة الصحة السعودية</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="bg-primary/5 rounded-2xl p-6">
+                                <div class="text-center mb-4">
+                                    <i class="fas fa-leaf text-4xl text-green-500 mb-3"></i>
+                                    <h4 class="font-bold text-dark mb-2">معاييرنا البيئية</h4>
+                                </div>
+                                <div class="space-y-3">
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-gray-700">نسبة المواد العضوية</span>
+                                        <span class="font-bold text-primary">100%</span>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-gray-700">خالية من الكيماويات الضارة</span>
+                                        <span class="font-bold text-primary">0%</span>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-gray-700">قابلة للتحلل الحيوي</span>
+                                        <span class="font-bold text-primary">95%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- FAQ 2 -->
-                <div class="faq-item bg-light rounded-xl overflow-hidden shadow-md fade-in">
-                    <button class="faq-question w-full text-right p-6 flex justify-between items-center hover:bg-gray-100 transition-colors" onclick="toggleFaq(this)">
-                        <span class="text-xl font-bold text-dark">كم تستغرق مدة الخدمة؟</span>
-                        <i class="fas fa-chevron-down text-primary transition-transform duration-300"></i>
+                <!-- FAQ 2 - Duration -->
+                <div class="faq-card group" data-category="service">
+                    <button class="faq-header w-full text-right p-8 flex justify-between items-center bg-white rounded-2xl shadow-lg hover:shadow-xl border border-gray-200 hover:border-secondary transition-all duration-500 group-hover:-translate-y-1">
+                        <div class="flex items-center flex-1">
+                            <div class="bg-secondary/10 p-4 rounded-xl ml-6 group-hover:scale-110 transition-transform">
+                                <i class="fas fa-clock text-2xl text-secondary"></i>
+                            </div>
+                            <div class="text-right">
+                                <h3 class="text-2xl font-bold text-dark mb-2">كم تستغرق مدة الخدمة؟ وهل يمكن التنظيف في وقت قصير؟</h3>
+                                <div class="flex items-center space-x-2 space-x-reverse text-sm text-gray-500">
+                                    <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full">الخدمات</span>
+                                    <span>معدل البحث: 88%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faq-icon w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center group-hover:bg-secondary group-hover:text-white transition-all duration-300">
+                            <i class="fas fa-plus text-xl text-secondary group-hover:text-white"></i>
+                        </div>
                     </button>
-                    <div class="faq-answer hidden px-6 pb-6">
-                        <p class="text-gray-600 text-lg leading-relaxed">تختلف المدة حسب نوع الخدمة وحجم المكان. في المتوسط، تنظيف منزل من 3 غرف يستغرق من 3-4 ساعات. نلتزم بالمواعيد المحددة ونعمل بكفاءة عالية.</p>
+                    <div class="faq-content hidden mt-4 bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-gray-100">
+                        <div class="mb-8">
+                            <p class="text-gray-700 text-lg leading-relaxed mb-6">
+                                مدة الخدمة تختلف حسب نوع الخدمة وحجم المكان. نعمل بفريق متخصص ومجهز بأحدث المعدات لضمان إنهاء العمل في أسرع وقت ممكن.
+                            </p>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-3 gap-6 mb-8">
+                            <div class="text-center bg-gray-50 rounded-2xl p-6">
+                                <div class="text-3xl font-bold text-primary mb-2">2-3 ساعات</div>
+                                <div class="text-gray-700">شقة (3 غرف)</div>
+                                <div class="text-sm text-gray-500 mt-2">متوسط الوقت</div>
+                            </div>
+                            <div class="text-center bg-gray-50 rounded-2xl p-6">
+                                <div class="text-3xl font-bold text-primary mb-2">4-5 ساعات</div>
+                                <div class="text-gray-700">فيلا متوسطة</div>
+                                <div class="text-sm text-gray-500 mt-2">مع فريق مزدوج</div>
+                            </div>
+                            <div class="text-center bg-gray-50 rounded-2xl p-6">
+                                <div class="text-3xl font-bold text-primary mb-2">24-48 ساعة</div>
+                                <div class="text-gray-700">مبنى تجاري</div>
+                                <div class="text-sm text-gray-500 mt-2">فريق متخصص</div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-secondary/5 rounded-2xl p-6">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-bolt text-2xl text-secondary ml-3"></i>
+                                <h4 class="font-bold text-dark">خدمة الاستعجال</h4>
+                            </div>
+                            <p class="text-gray-700">
+                                نقدم خدمة استعجالية للعملاء الذين يحتاجون تنظيفاً سريعاً. يمكننا تخصيص فريق إضافي لإنهاء العمل في نصف الوقت المعتاد.
+                            </p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- FAQ 3 -->
-                <div class="faq-item bg-light rounded-xl overflow-hidden shadow-md fade-in">
-                    <button class="faq-question w-full text-right p-6 flex justify-between items-center hover:bg-gray-100 transition-colors" onclick="toggleFaq(this)">
-                        <span class="text-xl font-bold text-dark">هل تعملون في نهاية الأسبوع؟</span>
-                        <i class="fas fa-chevron-down text-primary transition-transform duration-300"></i>
+                <!-- FAQ 3 - Pricing -->
+                <div class="faq-card group" data-category="pricing">
+                    <button class="faq-header w-full text-right p-8 flex justify-between items-center bg-white rounded-2xl shadow-lg hover:shadow-xl border border-gray-200 hover:border-green-500 transition-all duration-500 group-hover:-translate-y-1">
+                        <div class="flex items-center flex-1">
+                            <div class="bg-green-500/10 p-4 rounded-xl ml-6 group-hover:scale-110 transition-transform">
+                                <i class="fas fa-tag text-2xl text-green-500"></i>
+                            </div>
+                            <div class="text-right">
+                                <h3 class="text-2xl font-bold text-dark mb-2">كيف يتم احتساب الأسعار؟ وهل يوجد عروض أو خصومات؟</h3>
+                                <div class="flex items-center space-x-2 space-x-reverse text-sm text-gray-500">
+                                    <span class="bg-green-500/10 text-green-500 px-3 py-1 rounded-full">الأسعار</span>
+                                    <span>معدل البحث: 92%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faq-icon w-12 h-12 bg-green-500/10 rounded-full flex items-center justify-center group-hover:bg-green-500 group-hover:text-white transition-all duration-300">
+                            <i class="fas fa-plus text-xl text-green-500 group-hover:text-white"></i>
+                        </div>
                     </button>
-                    <div class="faq-answer hidden px-6 pb-6">
-                        <p class="text-gray-600 text-lg leading-relaxed">نعم، نعمل طوال أيام الأسبوع بما في ذلك نهاية الأسبوع. يمكنكم حجز موعد في أي يوم يناسبكم من السبت إلى الخميس من 8 صباحاً إلى 8 مساءً.</p>
+                    <div class="faq-content hidden mt-4 bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-gray-100">
+                        <div class="mb-8">
+                            <p class="text-gray-700 text-lg leading-relaxed">
+                                نتبع نظام تسعير شفاف وعادل يعتمد على عدة عوامل. أسعارنا تنافسية ونقدم أفضل قيمة مقابل المال.
+                            </p>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div>
+                                <h4 class="text-xl font-bold text-dark mb-6">عوامل التسعير</h4>
+                                <div class="space-y-6">
+                                    <div class="flex items-start">
+                                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center ml-3 flex-shrink-0">
+                                            <i class="fas fa-ruler text-primary"></i>
+                                        </div>
+                                        <div>
+                                            <div class="font-bold text-dark mb-1">مساحة المكان</div>
+                                            <div class="text-gray-600 text-sm">المتر المربع × سعر المتر</div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center ml-3 flex-shrink-0">
+                                            <i class="fas fa-door-open text-primary"></i>
+                                        </div>
+                                        <div>
+                                            <div class="font-bold text-dark mb-1">عدد الغرف</div>
+                                            <div class="text-gray-600 text-sm">سعر ثابت لكل غرفة</div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center ml-3 flex-shrink-0">
+                                            <i class="fas fa-star text-primary"></i>
+                                        </div>
+                                        <div>
+                                            <div class="font-bold text-dark mb-1">نوع الخدمة</div>
+                                            <div class="text-gray-600 text-sm">تنظيف عادي/عميق/متخصص</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gradient-to-br from-green-500/10 to-transparent rounded-2xl p-6">
+                                <h4 class="text-xl font-bold text-dark mb-6">العروض الحالية</h4>
+                                <div class="space-y-4">
+                                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                                        <div class="flex items-center justify-between">
+                                            <span class="font-bold text-dark">خصم 20%</span>
+                                            <span class="text-sm text-gray-600">للحجز الأول</span>
+                                        </div>
+                                    </div>
+                                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                                        <div class="flex items-center justify-between">
+                                            <span class="font-bold text-dark">عروض العائلة</span>
+                                            <span class="text-sm text-gray-600">خصم 15% للخدمات المتكررة</span>
+                                        </div>
+                                    </div>
+                                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                                        <div class="flex items-center justify-between">
+                                            <span class="font-bold text-dark">خصومات كبار السن</span>
+                                            <span class="text-sm text-gray-600">تخفيضات خاصة</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- FAQ 4 -->
-                <div class="faq-item bg-light rounded-xl overflow-hidden shadow-md fade-in">
-                    <button class="faq-question w-full text-right p-6 flex justify-between items-center hover:bg-gray-100 transition-colors" onclick="toggleFaq(this)">
-                        <span class="text-xl font-bold text-dark">كيف يتم احتساب السعر؟</span>
-                        <i class="fas fa-chevron-down text-primary transition-transform duration-300"></i>
+                <!-- FAQ 4 - Guarantee -->
+                <div class="faq-card group" data-category="guarantee">
+                    <button class="faq-header w-full text-right p-8 flex justify-between items-center bg-white rounded-2xl shadow-lg hover:shadow-xl border border-gray-200 hover:border-orange-500 transition-all duration-500 group-hover:-translate-y-1">
+                        <div class="flex items-center flex-1">
+                            <div class="bg-orange-500/10 p-4 rounded-xl ml-6 group-hover:scale-110 transition-transform">
+                                <i class="fas fa-shield-alt text-2xl text-orange-500"></i>
+                            </div>
+                            <div class="text-right">
+                                <h3 class="text-2xl font-bold text-dark mb-2">ما هي ضمانات الخدمة؟ وماذا لو لم أكن راضياً عن النتيجة؟</h3>
+                                <div class="flex items-center space-x-2 space-x-reverse text-sm text-gray-500">
+                                    <span class="bg-orange-500/10 text-orange-500 px-3 py-1 rounded-full">الضمانات</span>
+                                    <span>معدل البحث: 85%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faq-icon w-12 h-12 bg-orange-500/10 rounded-full flex items-center justify-center group-hover:bg-orange-500 group-hover:text-white transition-all duration-300">
+                            <i class="fas fa-plus text-xl text-orange-500 group-hover:text-white"></i>
+                        </div>
                     </button>
-                    <div class="faq-answer hidden px-6 pb-6">
-                        <p class="text-gray-600 text-lg leading-relaxed">يتم احتساب السعر بناءً على عدة عوامل: نوع الخدمة، مساحة المكان، عدد الغرف، والخدمات الإضافية المطلوبة. يمكنكم استخدام حاسبة السعر في الموقع للحصول على تقدير تقريبي.</p>
-                    </div>
-                </div>
-
-                <!-- FAQ 5 -->
-                <div class="faq-item bg-light rounded-xl overflow-hidden shadow-md fade-in">
-                    <button class="faq-question w-full text-right p-6 flex justify-between items-center hover:bg-gray-100 transition-colors" onclick="toggleFaq(this)">
-                        <span class="text-xl font-bold text-dark">هل توجد ضمانات على الخدمة؟</span>
-                        <i class="fas fa-chevron-down text-primary transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-answer hidden px-6 pb-6">
-                        <p class="text-gray-600 text-lg leading-relaxed">نعم، نضمن جودة خدماتنا 100%. في حال عدم رضاكم عن أي جزء من الخدمة، نعيد التنظيف مجاناً خلال 24 ساعة. رضاكم هو هدفنا الأول.</p>
-                    </div>
-                </div>
-
-                <!-- FAQ 6 -->
-                <div class="faq-item bg-light rounded-xl overflow-hidden shadow-md fade-in">
-                    <button class="faq-question w-full text-right p-6 flex justify-between items-center hover:bg-gray-100 transition-colors" onclick="toggleFaq(this)">
-                        <span class="text-xl font-bold text-dark">هل أحتاج لتوفير معدات التنظيف؟</span>
-                        <i class="fas fa-chevron-down text-primary transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-answer hidden px-6 pb-6">
-                        <p class="text-gray-600 text-lg leading-relaxed">لا، نحن نوفر جميع معدات ومواد التنظيف اللازمة. فريقنا يأتي مجهزاً بالكامل بأحدث المعدات والمواد الاحترافية.</p>
+                    <div class="faq-content hidden mt-4 bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-gray-100">
+                        <div class="mb-8">
+                            <p class="text-gray-700 text-lg leading-relaxed">
+                                نقدم ضمان رضا 100% على جميع خدماتنا. رضاكم هو أولويتنا الأولى وأساس عملنا.
+                            </p>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-8 mb-8">
+                            <div>
+                                <h4 class="text-xl font-bold text-dark mb-6">نظام الضمان الشامل</h4>
+                                <div class="space-y-4">
+                                    <div class="flex items-start">
+                                        <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center ml-3 mt-1">
+                                            <i class="fas fa-check text-green-500"></i>
+                                        </div>
+                                        <span class="text-gray-700">إعادة الخدمة مجاناً خلال 24 ساعة</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center ml-3 mt-1">
+                                            <i class="fas fa-check text-green-500"></i>
+                                        </div>
+                                        <span class="text-gray-700">استرداد كامل المبلغ في حال عدم الرضا</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center ml-3 mt-1">
+                                            <i class="fas fa-check text-green-500"></i>
+                                        </div>
+                                        <span class="text-gray-700">تغطية تلفيات العرضية للممتلكات</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gradient-to-br from-orange-500/10 to-transparent rounded-2xl p-6">
+                                <div class="text-center mb-4">
+                                    <i class="fas fa-medal text-4xl text-orange-500 mb-3"></i>
+                                    <h4 class="font-bold text-dark">إحصاءات الضمان</h4>
+                                </div>
+                                <div class="space-y-3">
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-gray-700">طلبات إعادة الخدمة</span>
+                                        <span class="font-bold text-orange-500">1.2%</span>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-gray-700">نسبة الرضا العام</span>
+                                        <span class="font-bold text-orange-500">98.8%</span>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-gray-700">شكاوى تم حلها</span>
+                                        <span class="font-bold text-orange-500">100%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+
+        <!-- Search and Contact -->
+        <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <!-- Search FAQ -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
+                    <h3 class="text-2xl font-bold text-dark mb-6">البحث في الأسئلة</h3>
+                    <div class="relative mb-6">
+                        <input type="text" 
+                               id="faq-search" 
+                               placeholder="ابحث في الأسئلة الشائعة..."
+                               class="w-full px-6 py-4 rounded-xl border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all">
+                        <i class="fas fa-search absolute left-6 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                    </div>
+                    <p class="text-gray-600 text-sm">
+                        اكتب كلمة مفتاحية للعثور على إجابات سريعة لأكثر من 50 سؤال متكرر
+                    </p>
+                </div>
+                
+                <!-- Contact Support -->
+                <div class="bg-gradient-to-br from-primary to-primary/90 rounded-2xl p-8 text-white">
+                    <h3 class="text-2xl font-bold mb-6">لم تجد إجابتك؟</h3>
+                    <p class="mb-8 text-white/90 leading-relaxed">
+                        فريق الدعم متاح 24/7 للإجابة على استفساراتك الشخصية وتقديم المساعدة الفورية
+                    </p>
+                    <div class="space-y-4">
+                        <a href="https://wa.me/966501234567" 
+                           target="_blank"
+                           class="flex items-center justify-center bg-white text-primary px-6 py-4 rounded-xl font-bold hover:bg-gray-100 transition-colors">
+                            <i class="fab fa-whatsapp ml-3 text-green-500 text-xl"></i>
+                            محادثة فورية عبر واتساب
+                        </a>
+                        <a href="tel:+966501234567" 
+                           class="flex items-center justify-center bg-white/20 backdrop-blur-sm border border-white/30 text-white px-6 py-4 rounded-xl font-bold hover:bg-white/30 transition-colors">
+                            <i class="fas fa-phone ml-3"></i>
+                            اتصل بنا الآن: 0501234567
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Add Custom Styles -->
+<style>
+    .faq-card {
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .faq-category {
+        transition: all 0.3s ease;
+    }
+    
+    .faq-category.active {
+        background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(var(--color-primary), 0.2);
+    }
+    
+    .faq-header {
+        transition: all 0.3s ease;
+    }
+    
+    .faq-icon {
+        transition: all 0.3s ease;
+        transform-origin: center;
+    }
+    
+    .faq-card.active .faq-icon {
+        transform: rotate(45deg);
+        background: var(--color-primary);
+        color: white;
+    }
+    
+    .faq-content {
+        animation: slideDown 0.5s ease-out;
+    }
+    
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    /* Search input focus effect */
+    #faq-search:focus {
+        box-shadow: 0 0 0 3px rgba(var(--color-primary), 0.1);
+    }
+    
+    /* Smooth hover effects */
+    .faq-card:hover .faq-header {
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .faq-header {
+            padding: 1.5rem;
+        }
+        
+        .faq-content {
+            padding: 1.5rem;
+        }
+    }
+</style>
+
+<!-- JavaScript for FAQ Interactions -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const faqCards = document.querySelectorAll('.faq-card');
+        const faqCategories = document.querySelectorAll('.faq-category');
+        const searchInput = document.getElementById('faq-search');
+        
+        // Toggle FAQ content
+        function toggleFAQ(card) {
+            const content = card.querySelector('.faq-content');
+            const icon = card.querySelector('.faq-icon i');
+            
+            if (content.classList.contains('hidden')) {
+                // Close all other FAQs
+                faqCards.forEach(otherCard => {
+                    if (otherCard !== card) {
+                        const otherContent = otherCard.querySelector('.faq-content');
+                        const otherIcon = otherCard.querySelector('.faq-icon i');
+                        otherContent.classList.add('hidden');
+                        otherCard.classList.remove('active');
+                        otherIcon.classList.remove('fa-minus');
+                        otherIcon.classList.add('fa-plus');
+                    }
+                });
+                
+                // Open this FAQ
+                content.classList.remove('hidden');
+                card.classList.add('active');
+                icon.classList.remove('fa-plus');
+                icon.classList.add('fa-minus');
+                
+                // Scroll into view if needed
+                setTimeout(() => {
+                    content.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }, 300);
+            } else {
+                content.classList.add('hidden');
+                card.classList.remove('active');
+                icon.classList.remove('fa-minus');
+                icon.classList.add('fa-plus');
+            }
+        }
+        
+        // Add click events to FAQ headers
+        faqCards.forEach(card => {
+            const header = card.querySelector('.faq-header');
+            header.addEventListener('click', () => toggleFAQ(card));
+        });
+        
+        // Category filtering
+        function filterFAQs(category) {
+            faqCards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'block';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 10);
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                    }, 300);
+                }
+            });
+            
+            // Update active category
+            faqCategories.forEach(btn => {
+                if (btn.dataset.category === category) {
+                    btn.classList.add('active');
+                    btn.style.background = '#111826';
+                    btn.style.color = 'white';
+                } else {
+                    btn.classList.remove('active');
+                    btn.style.background = '';
+                    btn.style.color = '';
+                }
+            });
+        }
+        
+        // Add click events to category buttons
+        faqCategories.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const category = btn.dataset.category;
+                filterFAQs(category);
+            });
+        });
+        
+        // Search functionality
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase().trim();
+            
+            if (searchTerm.length > 0) {
+                faqCards.forEach(card => {
+                    const header = card.querySelector('.faq-header');
+                    const content = card.querySelector('.faq-content');
+                    const text = (header.textContent + content.textContent).toLowerCase();
+                    
+                    if (text.includes(searchTerm)) {
+                        card.style.display = 'block';
+                        card.style.opacity = '1';
+                        
+                        // Highlight search term
+                        highlightText(card, searchTerm);
+                    } else {
+                        card.style.opacity = '0.3';
+                        card.style.transform = 'scale(0.98)';
+                    }
+                });
+            } else {
+                // Reset all cards
+                faqCards.forEach(card => {
+                    card.style.display = 'block';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                    removeHighlights(card);
+                });
+            }
+        });
+        
+        // Highlight search terms
+        function highlightText(card, term) {
+            const elements = card.querySelectorAll('.faq-header span, .faq-content p, .faq-content li');
+            
+            elements.forEach(element => {
+                const html = element.innerHTML;
+                const regex = new RegExp(`(${term})`, 'gi');
+                const highlighted = html.replace(regex, '<span class="bg-yellow-200 text-dark px-1 rounded">$1</span>');
+                element.innerHTML = highlighted;
+            });
+        }
+        
+        function removeHighlights(card) {
+            const highlighted = card.querySelectorAll('.bg-yellow-200');
+            highlighted.forEach(el => {
+                const parent = el.parentNode;
+                parent.replaceChild(document.createTextNode(el.textContent), el);
+                parent.normalize();
+            });
+        }
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                // Close all FAQs
+                faqCards.forEach(card => {
+                    const content = card.querySelector('.faq-content');
+                    const icon = card.querySelector('.faq-icon i');
+                    content.classList.add('hidden');
+                    card.classList.remove('active');
+                    icon.classList.remove('fa-minus');
+                    icon.classList.add('fa-plus');
+                });
+            }
+        });
+        
+        // Initialize with all FAQs visible
+        filterFAQs('all');
+        
+        // Auto-open first FAQ
+        setTimeout(() => {
+            if (faqCards.length > 0) {
+                toggleFAQ(faqCards[0]);
+            }
+        }, 1000);
+    });
+</script>
 
     <!-- CTA Section -->
     <section class="py-20 bg-gradient-to-r from-primary to-primary/80 text-white">

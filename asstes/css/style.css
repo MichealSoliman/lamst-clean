@@ -90,7 +90,7 @@ body {
 }
 
 #navbar.scrolled {
-    background: rgba(11, 132, 165, 0.95);
+    background: #111826;
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     padding-top: 0.75rem;
