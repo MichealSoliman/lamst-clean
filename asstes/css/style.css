@@ -1,0 +1,524 @@
+/* 
+ * لمسة كلين - Custom Styles
+ * ملف الأنماط المخصصة للموقع
+ */
+
+/* ========================================
+   1. Base Styles & RTL Adjustments
+======================================== */
+
+* {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* RTL Specific Adjustments */
+[dir="rtl"] .space-x-reverse > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 1;
+}
+
+/* ========================================
+   2. Animations & Transitions
+======================================== */
+
+/* Fade In Animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hero Content Animation */
+.hero-content {
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Pulse Animation for CTA Buttons */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.02);
+    }
+}
+
+.animate-pulse-custom {
+    animation: pulse 3s infinite;
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.animate-bounce {
+    animation: bounce 2s infinite;
+}
+
+/* ========================================
+   3. Navigation Styles
+======================================== */
+
+/* Sticky Navbar with Background */
+#navbar {
+    transition: all 0.3s ease;
+}
+
+#navbar.scrolled {
+    background: rgba(11, 132, 165, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+
+/* Mobile Menu Transition */
+#mobile-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+#mobile-menu.show {
+    max-height: 500px;
+}
+
+/* ========================================
+   4. Card Hover Effects
+======================================== */
+
+.service-card,
+.testimonial-card {
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* ========================================
+   5. FAQ Accordion Styles
+======================================== */
+
+.faq-item .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+}
+
+.faq-item .faq-answer.show {
+    max-height: 500px;
+    padding-bottom: 1.5rem;
+}
+
+.faq-question i {
+    transition: transform 0.3s ease;
+}
+
+.faq-question.active i {
+    transform: rotate(180deg);
+}
+
+/* ========================================
+   6. Gallery Carousel Styles
+======================================== */
+
+#gallery-carousel {
+    transition: transform 0.5s ease-out;
+}
+
+.carousel-indicator {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-indicator:hover {
+    transform: scale(1.2);
+}
+
+.carousel-indicator.active {
+    width: 2rem;
+    background-color: #0B84A5;
+}
+
+/* ========================================
+   7. Modal Styles
+======================================== */
+
+#contact-modal {
+    animation: fadeIn 0.3s ease-out;
+}
+
+#contact-modal > div {
+    animation: scaleIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Focus Trap for Modal */
+#contact-modal.show {
+    display: flex !important;
+}
+
+/* ========================================
+   8. Form Styles
+======================================== */
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #0B84A5;
+    box-shadow: 0 0 0 3px rgba(11, 132, 165, 0.1);
+}
+
+input[type="checkbox"]:checked {
+    background-color: #0B84A5;
+    border-color: #0B84A5;
+}
+
+/* ========================================
+   9. Price Calculator Result Animation
+======================================== */
+
+#price-result {
+    animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   10. Toast Notification
+======================================== */
+
+#success-toast {
+    animation: slideInRight 0.5s ease-out;
+}
+
+#success-toast.show {
+    display: flex !important;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ========================================
+   11. Floating WhatsApp Button
+======================================== */
+
+.fixed.bottom-6.left-6 {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* ========================================
+   12. Progress Line Animation
+======================================== */
+
+#progress-line {
+    transition: width 1s ease-out;
+}
+
+/* ========================================
+   13. Responsive Utilities
+======================================== */
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #0B84A5;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #096d87;
+}
+
+/* ========================================
+   14. Loading States
+======================================== */
+
+.loading {
+    position: relative;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.loading::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #0B84A5;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ========================================
+   15. Print Styles
+======================================== */
+
+@media print {
+    #navbar,
+    .fixed.bottom-6,
+    #contact-modal,
+    #success-toast {
+        display: none !important;
+    }
+}
+
+/* ========================================
+   16. Accessibility Improvements
+======================================== */
+
+/* Focus Visible for Keyboard Navigation */
+*:focus-visible {
+    outline: 3px solid #F59E0B;
+    outline-offset: 2px;
+}
+
+/* Skip to Main Content Link */
+.skip-to-main {
+    position: absolute;
+    left: -9999px;
+    z-index: 999;
+    padding: 1em;
+    background-color: #0B84A5;
+    color: white;
+    text-decoration: none;
+}
+
+.skip-to-main:focus {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+}
+
+/* Reduced Motion for Users Who Prefer It */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ========================================
+   17. High Contrast Mode Support
+======================================== */
+
+@media (prefers-contrast: high) {
+    .bg-primary {
+        background-color: #005073 !important;
+    }
+    
+    .text-primary {
+        color: #005073 !important;
+    }
+}
+
+/* ========================================
+   18. Dark Mode Support (Optional)
+======================================== */
+
+@media (prefers-color-scheme: dark) {
+    /* Add dark mode styles if needed */
+}
+
+/* ========================================
+   19. Mobile Optimizations
+======================================== */
+
+@media (max-width: 768px) {
+    /* Larger touch targets for mobile */
+    button,
+    a {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    /* Better spacing on mobile */
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+/* ========================================
+   20. Performance Optimizations
+======================================== */
+
+/* GPU Acceleration for Smooth Animations */
+.fade-in,
+.service-card,
+.hero-content,
+#gallery-carousel {
+    will-change: transform, opacity;
+}
+
+/* Lazy Load Images Placeholder */
+img[loading="lazy"] {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* ========================================
+   21. Utility Classes
+======================================== */
+
+.text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.drop-shadow-custom {
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, #0B84A5 0%, #F59E0B 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ========================================
+   22. Custom Grid Layouts
+======================================== */
+
+.grid-auto-fit {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+/* ========================================
+   23. Safe Area Support (for mobile notches)
+======================================== */
+
+@supports (padding: env(safe-area-inset-left)) {
+    body {
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
+    }
+}
+
+/* ========================================
+   24. Custom Borders & Decorations
+======================================== */
+
+.border-gradient {
+    border: 2px solid transparent;
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(135deg, #0B84A5, #F59E0B) border-box;
+}
+
+/* ========================================
+   25. Service Icons Animation
+======================================== */
+
+.service-card i {
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover i {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* End of Custom Styles */

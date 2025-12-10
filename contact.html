@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>اتصل بنا - لمسة كلين | تواصل مع أفضل شركة تنظيف في الرياض</title>
+    <meta name="description" content="تواصل مع لمسة كلين للحصول على خدمات تنظيف احترافية في الرياض. نحن هنا لخدمتك على مدار الساعة.">
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✨</text></svg>">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0B84A5',
+                        secondary: '#F59E0B',
+                        dark: '#111827',
+                        light: '#F8FAFC'
+                    },
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-cairo bg-light text-dark">
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/966501234567" target="_blank" class="fixed bottom-6 left-6 z-50 bg-green-500 hover:bg-green-600 text-white w-16 h-16 rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 animate-pulse">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- Navigation -->
+    <nav class="bg-primary text-white shadow-lg sticky top-0 z-40">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-reverse space-x-3">
+                    <div class="bg-white text-primary w-12 h-12 rounded-full flex items-center justify-center text-2xl font-bold">
+                        ✨
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold">لمسة كلين</h2>
+                        <p class="text-xs">نظافة احترافية</p>
+                    </div>
+                </div>
+
+                <div class="hidden lg:flex items-center space-x-reverse space-x-8">
+                    <a href="index.html" class="hover:text-secondary transition-colors">الرئيسية</a>
+                    <a href="services.html" class="hover:text-secondary transition-colors">الخدمات</a>
+                    <a href="about.html" class="hover:text-secondary transition-colors">من نحن</a>
+                    <a href="contact.html" class="text-secondary font-bold">اتصل بنا</a>
+                </div>
+
+                <a href="tel:+966501234567" class="hidden lg:flex items-center space-x-reverse space-x-2 hover:text-secondary transition-colors">
+                    <i class="fas fa-phone"></i>
+                    <span class="font-semibold">0501234567</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="bg-gradient-to-r from-primary to-primary/80 text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-5xl font-bold mb-4">تواصل معنا</h1>
+            <p class="text-xl max-w-2xl mx-auto">نحن هنا لخدمتك - تواصل معنا الآن واحصل على استشارة مجانية</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                
+                <!-- Contact Form -->
+                <div class="fade-in">
+                    <h2 class="text-3xl font-bold text-dark mb-6">أرسل لنا رسالة</h2>
+                    <form id="contact-page-form" class="space-y-6">
+                        <div>
+                            <label class="block text-lg font-semibold text-dark mb-2">الاسم الكامل *</label>
+                            <input type="text" required class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary focus:outline-none transition-colors">
+                        </div>
+
+                        <div>
+                            <label class="block text-lg font-semibold text-dark mb-2">رقم الجوال *</label>
+                            <input type="tel" required pattern="[0-9]{10}" placeholder="05xxxxxxxx" class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary focus:outline-none transition-colors">
+                        </div>
+
+                        <div>
+                            <label class="block text-lg font-semibold text-dark mb-2">البريد الإلكتروني</label>
+                            <input type="email" class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary focus:outline-none transition-colors">
+                        </div>
+
+                        <div>
+                            <label class="block text-lg font-semibold text-dark mb-2">نوع الخدمة *</label>
+                            <select required class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary focus:outline-none transition-colors">
+                                <option value="">اختر الخدمة</option>
+                                <option value="تنظيف المنازل">تنظيف المنازل</option>
+                                <option value="التنظيف العميق">التنظيف العميق</option>
+                                <option value="تنظيف المفروشات والسجاد">تنظيف المفروشات والسجاد</option>
+                                <option value="تنظيف المكاتب والشركات">تنظيف المكاتب والشركات</option>
+                                <option value="تنظيف بعد البناء">تنظيف بعد البناء</option>
+                                <option value="التعقيم والوقاية">التعقيم والوقاية</option>
+                                <option value="أخرى">أخرى</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-lg font-semibold text-dark mb-2">رسالتك *</label>
+                            <textarea required rows="5" class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary focus:outline-none transition-colors resize-none" placeholder="أخبرنا كيف يمكننا مساعدتك..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 hover:scale-105 shadow-lg">
+                            <i class="fas fa-paper-plane ml-2"></i>
+                            إرسال الرسالة
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="fade-in">
+                    <h2 class="text-3xl font-bold text-dark mb-6">معلومات التواصل</h2>
+                    
+                    <div class="space-y-6 mb-12">
+                        <div class="flex items-start space-x-reverse space-x-4 bg-light p-6 rounded-xl">
+                            <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-phone text-2xl text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-dark mb-2">الهاتف</h3>
+                                <a href="tel:+966501234567" class="text-lg text-gray-600 hover:text-primary transition-colors">0501234567</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-reverse space-x-4 bg-light p-6 rounded-xl">
+                            <div class="w-14 h-14 bg-green-500/10 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fab fa-whatsapp text-2xl text-green-500"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-dark mb-2">واتساب</h3>
+                                <a href="https://wa.me/966501234567" target="_blank" class="text-lg text-gray-600 hover:text-green-500 transition-colors">0501234567</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-reverse space-x-4 bg-light p-6 rounded-xl">
+                            <div class="w-14 h-14 bg-secondary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-envelope text-2xl text-secondary"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-dark mb-2">البريد الإلكتروني</h3>
+                                <a href="mailto:info@lamasaclean.com" class="text-lg text-gray-600 hover:text-secondary transition-colors">info@lamasaclean.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-reverse space-x-4 bg-light p-6 rounded-xl">
+                            <div class="w-14 h-14 bg-blue-500/10 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-map-marker-alt text-2xl text-blue-500"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-dark mb-2">العنوان</h3>
+                                <p class="text-lg text-gray-600">حي الملقا، الرياض<br>المملكة العربية السعودية</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-reverse space-x-4 bg-light p-6 rounded-xl">
+                            <div class="w-14 h-14 bg-purple-500/10 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-clock text-2xl text-purple-500"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-dark mb-2">ساعات العمل</h3>
+                                <p class="text-lg text-gray-600">السبت - الخميس<br>8:00 صباحاً - 8:00 مساءً</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="text-2xl font-bold text-dark mb-4">تابعنا على</h3>
+                    <div class="flex space-x-reverse space-x-4">
+                        <a href="#" class="w-14 h-14 bg-primary rounded-full flex items-center justify-center hover:bg-primary/80 transition-colors">
+                            <i class="fab fa-twitter text-white text-xl"></i>
+                        </a>
+                        <a href="#" class="w-14 h-14 bg-primary rounded-full flex items-center justify-center hover:bg-primary/80 transition-colors">
+                            <i class="fab fa-instagram text-white text-xl"></i>
+                        </a>
+                        <a href="#" class="w-14 h-14 bg-primary rounded-full flex items-center justify-center hover:bg-primary/80 transition-colors">
+                            <i class="fab fa-snapchat text-white text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-reverse space-x-3 mb-4">
+                        <div class="bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center text-2xl font-bold">
+                            ✨
+                        </div>
+                        <h3 class="text-2xl font-bold">لمسة كلين</h3>
+                    </div>
+                    <p class="text-gray-400">شركة تنظيف احترافية في الرياض</p>
+                </div>
+
+                <div>
+                    <h4 class="text-xl font-bold mb-4">روابط سريعة</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">الرئيسية</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">الخدمات</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">من نحن</a></li>
+                        <li><a href="privacy.html" class="text-gray-400 hover:text-white transition-colors">سياسة الخصوصية</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-xl font-bold mb-4">خدماتنا</h4>
+                    <ul class="space-y-2">
+                        <li><span class="text-gray-400">تنظيف المنازل</span></li>
+                        <li><span class="text-gray-400">التنظيف العميق</span></li>
+                        <li><span class="text-gray-400">تنظيف المفروشات</span></li>
+                        <li><span class="text-gray-400">تنظيف المكاتب</span></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-xl font-bold mb-4">تواصل معنا</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-center space-x-reverse space-x-3">
+                            <i class="fas fa-phone text-primary"></i>
+                            <a href="tel:+966501234567" class="text-gray-400 hover:text-white transition-colors">0501234567</a>
+                        </li>
+                        <li class="flex items-center space-x-reverse space-x-3">
+                            <i class="fas fa-envelope text-primary"></i>
+                            <a href="mailto:info@lamasaclean.com" class="text-gray-400 hover:text-white transition-colors">info@lamasaclean.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2024 لمسة كلين. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Toast -->
+    <div id="success-toast" class="hidden fixed bottom-6 right-6 bg-green-500 text-white px-8 py-4 rounded-lg shadow-2xl z-50">
+        <div class="flex items-center space-x-reverse space-x-3">
+            <i class="fas fa-check-circle text-2xl"></i>
+            <div>
+                <p class="font-bold">تم إرسال رسالتك بنجاح!</p>
+                <p class="text-sm">سنتواصل معك قريباً</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Handle contact page form
+        document.getElementById('contact-page-form')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const submitBtn = this.querySelector('button[type="submit"]');
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin ml-2"></i> جاري الإرسال...';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                submitBtn.innerHTML = '<i class="fas fa-paper-plane ml-2"></i> إرسال الرسالة';
+                submitBtn.disabled = false;
+                this.reset();
+                showSuccessToast();
+            }, 1500);
+        });
+    </script>
+</body>
+</html>
